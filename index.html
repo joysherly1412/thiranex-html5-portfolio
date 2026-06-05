@@ -3,78 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Joy Sherly M - Professional Web Developer Portfolio. Specialized in building semantic and accessible web applications.">
-    <meta name="keywords" content="Joy Sherly, Web Developer, Portfolio, Accessible Web Design, HTML5">
-    <meta name="author" content="Joy Sherly M">
-    <title>Joy Sherly M | Portfolio</title>
+    <meta name="description" content="Joy Sherly M | Web Development Capstone Project - Modern E-Commerce Catalog & Portfolio Dashboard.">
+    <title>Joy Sherly M | Capstone Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
+        <div class="logo">JoyStore 🚀</div>
         <nav aria-label="Main Navigation">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="nav-link" data-page="home">Home Portfolio</a></li>
+                <li><a href="#" class="nav-link" data-page="shop">E-Store Catalog</a></li>
+                <li><a href="#" class="nav-link" data-page="weather">Live Apps</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Section -->
-        <section id="about" aria-labelledby="about-heading">
-            <h1 id="about-heading">Welcome Intern: Joy Sherly M</h1>
-            <p>Hi, I am a Web Development Intern building accessible and high-performance websites.</p>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">My Projects</h2>
-            <article>
-                <h3>Project 1: Task Management App</h3>
-                <p>An interactive, client-side application built to master DOM manipulation.</p>
-            </article>
-        </section>
-
-        <!-- Accessible Contact Form -->
-        <section id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Contact Me</h2>
-            <form action="#" method="POST">
-                <div>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required aria-required="true">
-                </div>
-                <div>
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
-                </div>
-                <div>
-                    <button type="submit" aria-label="Submit the contact form">Submit Work</button>
-                </div>
-            </form>
-        </section>
-    </main><section id="weather-section" style="margin-top: 40px; background: var(--card-bg); padding: 20px; border-radius: 8px; border-left: 5px solid #ffb300;">
-            <h2>Task 4: Real-Time Weather Dashboard</h2>
-            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <input type="text" id="city-input" placeholder="Enter city name (e.g., Chennai, London)..." style="flex: 1; margin: 0; padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
-                <button id="search-weather-btn" style="background: #ffb300; color: black; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Search</button>
+    <main id="app-viewport">
+        
+        <section id="page-home" class="view-page active-view">
+            <div class="hero-section">
+                <h1>Welcome Intern: Joy Sherly M</h1>
+                <p>Web Development Capstone Project demonstrating Modular Architecture, Client-Side Routing, and Deployment Operations.</p>
             </div>
-            
-            <div id="weather-display" style="display: none; margin-top: 20px;">
-                <h3 id="weather-city" style="color: var(--accent-color);">City Name</h3>
-                <p><strong>Temperature:</strong> <span id="weather-temp">--</span>°C</p>
-                <p><strong>Humidity:</strong> <span id="weather-humidity">--</span>%</p>
-                <p><strong>Wind Speed:</strong> <span id="weather-wind">--</span> m/s</p>
-            </div>
-            <p id="weather-error" style="color: red; display: none; font-weight: bold;"></p>
         </section>
 
-    <!-- Footer Section -->
+        <section id="page-shop" class="view-page">
+            <h2>🛒 Tech Gadgets E-Store</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Premium Wireless Headphones</h3>
+                    <p class="price">$199.99</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <h3>Mechanical Gaming Keyboard</h3>
+                    <p class="price">$89.50</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <h3>Ultra-wide Productivity Monitor</h3>
+                    <p class="price">$349.00</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-weather" class="view-page">
+            <div class="weather-box">
+                <h2>🌤️ Live Weather Dashboard App</h2>
+                <div class="form-group">
+                    <input type="text" id="city-input" placeholder="Enter city (e.g., Chennai)...">
+                    <button id="search-weather-btn">Search Metrics</button>
+                </div>
+                <div id="weather-display" style="display: none; margin-top: 15px;">
+                    <h4 id="weather-city">City Metrics</h4>
+                    <p>Temperature: <span id="weather-temp">--</span>°C</p>
+                    <p>Humidity: <span id="weather-humidity">--</span>%</p>
+                </div>
+                <p id="weather-error" style="color: red; display: none;"></p>
+            </div>
+        </section>
+
+    </main>
+
     <footer>
-        <p>&copy; 2026 Joy Sherly M. All rights reserved.</p>
+        <p>&copy; 2026 Joy Sherly M | Production Grade Capstone Deployment.</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
