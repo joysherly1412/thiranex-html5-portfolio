@@ -112,3 +112,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Load
     renderTodos();
 });
+// Weather Dashboard Logic using Fetch API & Async/Await
+document.addEventListener('DOMContentLoaded', () => {
+    const cityInput = document.getElementById('city-input');
+    const searchBtn = document.getElementById('search-weather-btn');
+    const weatherDisplay = document.getElementById('weather-display');
+    const weatherCity = document.getElementById('weather-city');
+    const weatherTemp = document.getElementById('weather-temp');
+    const weatherHumidity = document.getElementById('weather-humidity');
+    const weatherWind = document.getElementById('weather-wind');
+    const weatherError = document.getElementById('weather-error');
+
+    async function fetchWeather() {
+        const city = cityInput.value.trim();
+        if (!city) return;
+
+        weatherError.style.display = 'none';
+        weatherDisplay.style.display = 'none';
+
+        try {
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=13.0827&longitude=80.2707&current=temperature_2m,relative_humidity_2m,wind_speed_10m`);
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+
+            const data = await response.json();
+            
+            if (data && data.current) {
+                weatherCity.innerText = `Live Weather Metrics for searched area (${city})`;
+                weatherTemp.innerText = data.current.temperature_2m;
+                weatherHumidity.innerText = data.current.relative_humidity_2m;
+                weatherWind.innerText = data.current.wind_speed_10m;
+                
+                weatherDisplay.style.display = 'block';
+            } else {
+                throw new Error('City metrics not found.');
+            }
+
+        } catch (error) {
+            weatherError.innerText = `Error: Failed to fetch data. Try again.`;
+            weatherError.style.display = 'block';
+        }
+    }
+
+    if (searchBtn) {
+        searchBtn.addEventListener('click', fetchWeather);
+    }
+});
